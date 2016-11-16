@@ -1,5 +1,5 @@
-.measure-wide.center
+.measure.center
   %h2.tc Edit user
   = render "form.html", changeset: @changeset, action: user_path(@conn, :update, @user)
-  .center.w-50.tc
-    = link "Back", to: user_path(@conn, :index), class: "dim link black"
+  .center.w-50.tc.ma2
+    = link "Back", to: user_path(@conn, :index), class: "dim link light-gray"

@@ -9,17 +9,16 @@
     %title Hello Noot!
     %link{href: "#{static_path(@conn, "/css/app.css")}", rel: "stylesheet"}
   %body.athelas.bg-dark-gray.light-gray
-    %nav.pa3.pa4-ns
-      %a.link.dim.white.b.f6.f5-ns.dib.mr3{href: "/", title: "Home"} Nootr
-      %a.link.dim.light-gray.f6.f5-ns.dib.mr3{href: "#", title: "About"} About
+    %nav.pa3.pa4-ns.h2
+      %a.link.dim.white.b.f6.f5-ns.dib.mr3{href: "/", title: "Home"} Home
       - if user = current_user(@conn) do
         .dim.link.dim.light-gray.f6.f5-ns.dib.mr3
           Logged in as
           %strong= user.username
-        = link "Logout", to: session_path(@conn, :delete, user.id), method: :delete, class: "link dim light-gray f6 f5-ns dib mr3"
+        = link "Sign out", to: session_path(@conn, :delete, user.id), method: :delete, class: "link dim light-gray f6 f5-ns dib mr3 ba pa2 br2 bw1 fr"
       - else
-        = link "Login", to: session_path(@conn, :new), class: "link dim light-gray f6 f5-ns dib mr3"
-        = link "Register", to: user_path(@conn, :new), class: "link dim light-gray f6 f5-ns dib mr3"
+        = link "Sign up", to: user_path(@conn, :new), class: "link dim light-gray f6 f5-ns dib mr3 ba pa2 br2 bw1 fr"
+        = link "Sign In", to: session_path(@conn, :new), class: "link dim light-gray f6 f5-ns dib mr3 ba pa2 br2 bw1 fr"
     %div
       %p{role: "alert"}= get_flash(@conn, :info)
       %p{role: "alert"}= get_flash(@conn, :error)
