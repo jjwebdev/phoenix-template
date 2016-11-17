@@ -1,4 +1,4 @@
-defmodule Noot.ModelCase do
+defmodule PhoenixTemplate.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,20 +16,20 @@ defmodule Noot.ModelCase do
 
   using do
     quote do
-      alias Noot.Repo
+      alias PhoenixTemplate.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Noot.ModelCase
+      import PhoenixTemplate.ModelCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Noot.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixTemplate.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Noot.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(PhoenixTemplate.Repo, {:shared, self()})
     end
 
     :ok
@@ -59,7 +59,7 @@ defmodule Noot.ModelCase do
   """
   def errors_on(struct, data) do
     struct.__struct__.changeset(struct, data)
-    |> Ecto.Changeset.traverse_errors(&Noot.ErrorHelpers.translate_error/1)
+    |> Ecto.Changeset.traverse_errors(&PhoenixTemplate.ErrorHelpers.translate_error/1)
     |> Enum.flat_map(fn {key, errors} -> for msg <- errors, do: {key, msg} end)
   end
 end

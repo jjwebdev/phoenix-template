@@ -1,4 +1,4 @@
-defmodule Noot do
+defmodule PhoenixTemplate do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -9,23 +9,23 @@ defmodule Noot do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(Noot.Repo, []),
+      supervisor(PhoenixTemplate.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(Noot.Endpoint, []),
-      # Start your own worker by calling: Noot.Worker.start_link(arg1, arg2, arg3)
-      # worker(Noot.Worker, [arg1, arg2, arg3]),
+      supervisor(PhoenixTemplate.Endpoint, []),
+      # Start your own worker by calling: PhoenixTemplate.Worker.start_link(arg1, arg2, arg3)
+      # worker(PhoenixTemplate.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Noot.Supervisor]
+    opts = [strategy: :one_for_one, name: PhoenixTemplate.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    Noot.Endpoint.config_change(changed, removed)
+    PhoenixTemplate.Endpoint.config_change(changed, removed)
     :ok
   end
 end

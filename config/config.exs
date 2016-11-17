@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :noot,
-  ecto_repos: [Noot.Repo]
+config :phoenix_template,
+  ecto_repos: [PhoenixTemplate.Repo]
 
 # Configures the endpoint
-config :noot, Noot.Endpoint,
+config :phoenix_template, PhoenixTemplate.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "Sx66Rx02vs3EifufWEqx/YP5PDmUpVoukicabfS3bA1F56pZAiZPNfeuwRwPu94S",
-  render_errors: [view: Noot.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Noot.PubSub,
+  render_errors: [view: PhoenixTemplate.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: PhoenixTemplate.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

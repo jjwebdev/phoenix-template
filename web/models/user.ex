@@ -1,5 +1,5 @@
-defmodule Noot.User do
-  use Noot.Web, :model
+defmodule PhoenixTemplate.User do
+  use PhoenixTemplate.Web, :model
   import Comeonin.Bcrypt, only: [hashpwsalt: 1]
 
   schema "users" do

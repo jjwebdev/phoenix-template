@@ -1,5 +1,5 @@
-defmodule Noot.ErrorView do
-  use Noot.Web, :view
+defmodule PhoenixTemplate.ErrorView do
+  use PhoenixTemplate.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

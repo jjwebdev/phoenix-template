@@ -1,4 +1,4 @@
-defmodule Noot.ErrorHelpers do
+defmodule PhoenixTemplate.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule Noot.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(Noot.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(PhoenixTemplate.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(Noot.Gettext, "errors", msg, opts)
+      Gettext.dgettext(PhoenixTemplate.Gettext, "errors", msg, opts)
     end
   end
 end

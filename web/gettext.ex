@@ -1,11 +1,11 @@
-defmodule Noot.Gettext do
+defmodule PhoenixTemplate.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
   By using [Gettext](https://hexdocs.pm/gettext),
   your module gains a set of macros for translations, for example:
 
-      import Noot.Gettext
+      import PhoenixTemplate.Gettext
 
       # Simple translation
       gettext "Here is the string to translate"
@@ -20,5 +20,5 @@ defmodule Noot.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :noot
+  use Gettext, otp_app: :phoenix_template
 end

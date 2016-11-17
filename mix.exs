@@ -1,8 +1,8 @@
-defmodule Noot.Mixfile do
+defmodule PhoenixTemplate.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :noot,
+    [app: :phoenix_template,
      version: "0.0.1",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,7 +17,7 @@ defmodule Noot.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Noot, []},
+    [mod: {PhoenixTemplate, []},
      applications: [:mix, :phoenix_haml, :phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex, :comeonin]]
   end

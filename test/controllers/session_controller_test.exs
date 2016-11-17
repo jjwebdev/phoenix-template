@@ -1,6 +1,6 @@
-defmodule Noot.SessionControllerTest do
-  use Noot.ConnCase
-  alias Noot.User
+defmodule PhoenixTemplate.SessionControllerTest do
+  use PhoenixTemplate.ConnCase
+  alias PhoenixTemplate.User
 
   setup do
     User.changeset(%User{},

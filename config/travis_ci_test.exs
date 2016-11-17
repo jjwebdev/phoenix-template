@@ -1,10 +1,10 @@
 use Mix.Config
-config :noot, Noot.Endpoint,
+config :phoenix_template, PhoenixTemplate.Endpoint,
   http: [port: 4001],
   server: false
 config :logger, level: :warn
 config :comeonin, bcrypt_log_rounds: 4
-config :noot, Noot.Repo,
+config :phoenix_template, PhoenixTemplate.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "",

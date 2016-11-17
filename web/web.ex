@@ -1,12 +1,12 @@
-defmodule Noot.Web do
+defmodule PhoenixTemplate.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use Noot.Web, :controller
-      use Noot.Web, :view
+      use PhoenixTemplate.Web, :controller
+      use PhoenixTemplate.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule Noot.Web do
     quote do
       use Phoenix.Controller
 
-      alias Noot.Repo
+      alias PhoenixTemplate.Repo
       import Ecto
       import Ecto.Query
 
-      import Noot.Router.Helpers
-      import Noot.Gettext
+      import PhoenixTemplate.Router.Helpers
+      import PhoenixTemplate.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule Noot.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Noot.Router.Helpers
-      import Noot.ErrorHelpers
-      import Noot.Gettext
+      import PhoenixTemplate.Router.Helpers
+      import PhoenixTemplate.ErrorHelpers
+      import PhoenixTemplate.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule Noot.Web do
     quote do
       use Phoenix.Channel
 
-      alias Noot.Repo
+      alias PhoenixTemplate.Repo
       import Ecto
       import Ecto.Query
-      import Noot.Gettext
+      import PhoenixTemplate.Gettext
     end
   end
 
