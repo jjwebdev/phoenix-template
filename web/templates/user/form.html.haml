@@ -1,4 +1,5 @@
 - form_for @changeset, @action, fn f ->
+
   - if @changeset.action do
     .red.tc
       Oops, something went wrong! Please check the errors below.
@@ -15,4 +16,4 @@
     = password_input f, :password_confirmation, placeholder: "confirm password", class: "br2 ba b--silver pa3 tc w-100 mv1"
     .red.tc= error_tag f, :password_confirmation
   .form-group
-    = submit "Create account", class: "pa3 f5 br2 bg-white ba b--black center db w-third mt4"
+    = submit @form_submit, class: "pa3 f5 br2 bg-blue ba b--black center db w-third mt4 light-gray b--transparent"
