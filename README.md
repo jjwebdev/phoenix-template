@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/jjwebdev/phoenix_template_web.svg?branch=master)](https://travis-ci.org/jjwebdev/phoenix_template_web)
-
-# PhoenixTemplate
+# Phoenix Template
 
 To start your Phoenix app:
 
