@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/jjwebdev/noot_web.svg?branch=master)](https://travis-ci.org/jjwebdev/noot_web)
-
-# Noot
+# Phoenix Template
 
 To start your Phoenix app:
 
