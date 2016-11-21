@@ -1,7 +1,7 @@
-defmodule Noot.UserControllerTest do
-  use Noot.ConnCase
+defmodule PhoenixTemplate.UserControllerTest do
+  use PhoenixTemplate.ConnCase
 
-  alias Noot.User
+  alias PhoenixTemplate.User
   @valid_create_attrs %{
     email: "test@test.com",
     password: "test1234",

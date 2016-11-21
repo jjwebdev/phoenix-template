@@ -1,4 +1,4 @@
-defmodule Noot.ChannelCase do
+defmodule PhoenixTemplate.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,22 +20,22 @@ defmodule Noot.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias Noot.Repo
+      alias PhoenixTemplate.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
 
       # The default endpoint for testing
-      @endpoint Noot.Endpoint
+      @endpoint PhoenixTemplate.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Noot.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixTemplate.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Noot.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(PhoenixTemplate.Repo, {:shared, self()})
     end
 
     :ok

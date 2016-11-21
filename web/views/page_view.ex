@@ -1,3 +1,3 @@
-defmodule Noot.PageView do
-  use Noot.Web, :view
+defmodule PhoenixTemplate.PageView do
+  use PhoenixTemplate.Web, :view
 end

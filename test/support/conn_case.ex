@@ -1,4 +1,4 @@
-defmodule Noot.ConnCase do
+defmodule PhoenixTemplate.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,23 +20,23 @@ defmodule Noot.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Noot.Repo
+      alias PhoenixTemplate.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import Noot.Router.Helpers
+      import PhoenixTemplate.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Noot.Endpoint
+      @endpoint PhoenixTemplate.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Noot.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixTemplate.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Noot.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(PhoenixTemplate.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

@@ -31,6 +31,6 @@ end
 # when running `mix release`, the first release in the file
 # will be used by default
 
-release :noot do
-  set version: current_version(:noot)
+release :phoenix_template do
+  set version: current_version(:phoenix_template)
 end

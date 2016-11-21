@@ -1,8 +1,8 @@
-defmodule Noot.LayoutViewTest do
-  use Noot.ConnCase, async: true
+defmodule PhoenixTemplate.LayoutViewTest do
+  use PhoenixTemplate.ConnCase, async: true
 
-  alias Noot.LayoutView
-  alias Noot.User
+  alias PhoenixTemplate.LayoutView
+  alias PhoenixTemplate.User
 
   setup do
     User.changeset(%User{},

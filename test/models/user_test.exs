@@ -1,7 +1,7 @@
-defmodule Noot.UserTest do
-  use Noot.ModelCase
+defmodule PhoenixTemplate.UserTest do
+  use PhoenixTemplate.ModelCase
 
-  alias Noot.User
+  alias PhoenixTemplate.User
 
   @valid_attrs %{
     email: "test@test.com",

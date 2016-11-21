@@ -1,3 +1,3 @@
-defmodule Noot.SessionView do
-  use Noot.Web, :view
+defmodule PhoenixTemplate.SessionView do
+  use PhoenixTemplate.Web, :view
 end

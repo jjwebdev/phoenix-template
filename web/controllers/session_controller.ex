@@ -1,7 +1,7 @@
-defmodule Noot.SessionController do
+defmodule PhoenixTemplate.SessionController do
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
-  use Noot.Web, :controller
-  alias Noot.User
+  use PhoenixTemplate.Web, :controller
+  alias PhoenixTemplate.User
   plug :scrub_params, "user" when action in [:create]
 
   def new(conn, _params) do

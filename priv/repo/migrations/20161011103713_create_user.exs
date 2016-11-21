@@ -1,4 +1,4 @@
-defmodule Noot.Repo.Migrations.CreateUser do
+defmodule PhoenixTemplate.Repo.Migrations.CreateUser do
   use Ecto.Migration
 
   def change do

@@ -1,14 +1,14 @@
-defmodule Noot.Endpoint do
-  use Phoenix.Endpoint, otp_app: :noot
+defmodule PhoenixTemplate.Endpoint do
+  use Phoenix.Endpoint, otp_app: :phoenix_template
 
-  socket "/socket", Noot.UserSocket
+  socket "/socket", PhoenixTemplate.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :noot, gzip: false,
+    at: "/", from: :phoenix_template, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,8 +35,8 @@ defmodule Noot.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_noot_key",
+    key: "_phoenix_template_key",
     signing_salt: "uNRDIPN1"
 
-  plug Noot.Router
+  plug PhoenixTemplate.Router
 end

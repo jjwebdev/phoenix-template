@@ -1,7 +1,7 @@
-defmodule Noot.UserController do
-  use Noot.Web, :controller
+defmodule PhoenixTemplate.UserController do
+  use PhoenixTemplate.Web, :controller
 
-  alias Noot.User
+  alias PhoenixTemplate.User
 
   def index(conn, _params) do
     users = Repo.all(User)
