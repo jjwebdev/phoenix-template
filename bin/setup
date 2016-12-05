@@ -1,5 +1,5 @@
 #!/bin/bash
 mix deps.get
-mix ecto.create && mix ecto.migrate`
+mix ecto.create && mix ecto.migrate
 npm install
 mix test
