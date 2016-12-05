@@ -9,3 +9,17 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alias PhoenixTemplate.User
+alias PhoenixTemplate.Repo
+
+changeset = %User{username: "admin", email: "admin@example.com"}
+
+Repo.insert! changeset
+
+
+# PhoenixTemplate.Repo.insert_or_update!(%PhoenixTemplate.User{
+#   username: "member",
+#   email: "member@example.com",
+#   password: "password"
+# })

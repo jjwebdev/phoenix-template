@@ -23,5 +23,5 @@
       %p.tc{role: "alert"}= get_flash(@conn, :info)
       %p.tc.red{role: "alert"}= get_flash(@conn, :error)
       %main{role: "main"}= render @view_module, @view_template, assigns
+    %script{src: "https://code.jquery.com/jquery-3.1.1.slim.min.js", integrity: "sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=", crossorigin: "anonymous"}
     %script{src: "#{static_path(@conn, "/js/app.js")}"}
-    %script{src: "#{static_path(@conn, "/js/vendor.js")}"}
