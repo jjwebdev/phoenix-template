@@ -13,13 +13,33 @@
 alias PhoenixTemplate.User
 alias PhoenixTemplate.Repo
 
-changeset = %User{username: "admin", email: "admin@example.com"}
+admin = User.changeset(%User{}, %{
+    email: "admin@example.com",
+    password: "password",
+    password_confirmation: "password",
+    role: 0
+  })
 
-Repo.insert! changeset
+member = User.changeset(%User{}, %{
+    email: "member@example.com",
+    password: "password",
+    password_confirmation: "password",
+    role: 1
+  })
 
+case Repo.insert_or_update admin do
 
-# PhoenixTemplate.Repo.insert_or_update!(%PhoenixTemplate.User{
-#   username: "member",
-#   email: "member@example.com",
-#   password: "password"
-# })
+  {:error, changeset} ->
+    IO.puts("Error seeding admin user")
+    IO.inspect(changeset.errors)
+  {:ok, _} ->
+    IO.puts("Successfully seeded admin user")
+end
+
+case Repo.insert_or_update member do
+  {:error, changeset} ->
+    IO.puts("Error seeding member user")
+    IO.inspect(changeset.errors)
+  {:ok, _} ->
+    IO.puts("Successfully seeded member user")
+end
