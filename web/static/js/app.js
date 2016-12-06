@@ -21,12 +21,12 @@ import "phoenix_html"
 
 $(document).ready(()=> {
   $('#admin-easy-login').on("click", () => {
-    $('#user_username').val('admin');
+    $('#user_email').val('admin@example.com');
     $('#user_password').val('password');
     $('#user_submit').click();
   });
   $('#member-easy-login').on("click", () => {
-    $('#user_username').val('member');
+    $('#user_email').val('member@example.com');
     $('#user_password').val('password');
     $('#user_submit').click();
   });
