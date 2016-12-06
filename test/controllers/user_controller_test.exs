@@ -6,7 +6,8 @@ defmodule PhoenixTemplate.UserControllerTest do
     email: "test@test.com",
     password: "test1234",
     password_confirmation: "test1234",
-    username: "testuser"
+    username: "testuser",
+    role: 0
   }
   @valid_attrs %{email: "test@test.com", username: "testuser"}
   @invalid_attrs %{}
