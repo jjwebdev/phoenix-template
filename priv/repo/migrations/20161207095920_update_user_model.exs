@@ -7,7 +7,7 @@ defmodule PhoenixTemplate.Repo.Migrations.UpdateUserModel do
       modify :email, :string, null: false
       modify :password_digest, :string, null: false
     end
-    # create unique_index :users, [:email]
+    create unique_index :users, [:email]
   end
 
   def down do
