@@ -5,7 +5,7 @@ defmodule PhoenixTemplate.LayoutViewTest do
   alias PhoenixTemplate.User
 
   setup do
-    User.changeset(%User{},
+    User.update_changeset(%User{},
     %{
       password: "supersecret",
       password_confirmation: "supersecret",

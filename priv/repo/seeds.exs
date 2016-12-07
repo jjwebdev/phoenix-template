@@ -11,16 +11,17 @@
 # and so on) as they will fail if something goes wrong.
 
 alias PhoenixTemplate.User
+alias PhoenixTemplate.Post
 alias PhoenixTemplate.Repo
 
-admin = User.changeset(%User{}, %{
+admin = User.update_changeset(%User{}, %{
     email: "admin@example.com",
     password: "password",
     password_confirmation: "password",
     role: :admin
   })
 
-member = User.changeset(%User{}, %{
+member = User.update_changeset(%User{}, %{
     email: "member@example.com",
     password: "password",
     password_confirmation: "password",
@@ -28,7 +29,6 @@ member = User.changeset(%User{}, %{
   })
 
 case Repo.insert_or_update admin do
-
   {:error, changeset} ->
     IO.puts("Error seeding admin user")
     IO.inspect(changeset.errors)
@@ -42,4 +42,12 @@ case Repo.insert_or_update member do
     IO.inspect(changeset.errors)
   {:ok, _} ->
     IO.puts("Successfully seeded member user")
+end
+
+for _ <- 1..10 do
+  Repo.insert!(%Post{
+    title: Faker.Lorem.sentence,
+    body: Faker.Lorem.paragraph,
+    user_id: [1, 2] |> Enum.take_random(1) |> hd
+  })
 end

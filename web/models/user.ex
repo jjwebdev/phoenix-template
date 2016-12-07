@@ -8,6 +8,8 @@ defmodule PhoenixTemplate.User do
     field :password_digest, :string
     field :role, RoleEnum
 
+    has_many :posts, PhoenixTemplate.Post
+
     timestamps()
 
     # Virtual Fields
@@ -18,7 +20,7 @@ defmodule PhoenixTemplate.User do
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
-  def changeset(struct, params \\ %{}) do
+  def update_changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:email, :password, :password_confirmation, :role])
     |> unique_constraint(:email)
@@ -28,12 +30,19 @@ defmodule PhoenixTemplate.User do
     |> hash_password
   end
 
+  def registration_changeset(struct, params \\ %{}) do
+      struct
+      |> cast(params, [:email, :password, :password_confirmation])
+      |> validate_required([:email, :password, :password_confirmation])
+      |> hash_password
+    end
+
   defp hash_password(changeset) do
-    if password = get_change(changeset, :password) do
-      changeset
-      |> put_change(:password_digest, hashpwsalt(password))
-    else
-      changeset
+    case changeset do
+      %Ecto.Changeset{valid?: true, changes: %{password: password}} ->
+        put_change(changeset, :password_digest, hashpwsalt(password))
+      _ ->
+        changeset
     end
   end
 end

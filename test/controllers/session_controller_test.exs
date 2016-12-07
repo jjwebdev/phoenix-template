@@ -3,7 +3,7 @@ defmodule PhoenixTemplate.SessionControllerTest do
   alias PhoenixTemplate.User
 
   setup do
-    User.changeset(%User{},
+    User.update_changeset(%User{},
     %{
       username: "jk",
       password: "supersecret",
