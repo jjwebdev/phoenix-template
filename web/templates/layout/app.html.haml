@@ -14,7 +14,7 @@
       - if user = current_user(@conn) do
         .dim.link.dim.light-gray.f6.f5-ns.dib.mr3
           Logged in as
-          %strong= user.username
+          %strong= user.email
         = link "Sign out", to: session_path(@conn, :delete, user.id), method: :delete, class: "link dim light-gray f6 f5-ns dib mr3 ba pa2 br2 bw1 fr"
       - else
         = link "Sign up", to: user_path(@conn, :new), class: "link dim light-gray f6 f5-ns dib mr3 ba pa2 br2 bw1 fr"
