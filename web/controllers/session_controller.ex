@@ -5,7 +5,7 @@ defmodule PhoenixTemplate.SessionController do
   plug :scrub_params, "user" when action in [:create]
 
   def new(conn, _params) do
-    render conn, "new.html", changeset: User.changeset(%User{})
+    render conn, "new.html", changeset: User.update_changeset(%User{})
   end
 
   def create(conn, %{"user" => %{"username" => username, "password" => password}})
