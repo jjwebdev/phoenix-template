@@ -28,3 +28,12 @@ import_config "#{Mix.env}.exs"
 
 config :phoenix, :template_engines,
   haml: PhoenixHaml.Engine
+
+  config :guardian, Guardian,
+    allowed_algos: ["HS512"], # optional
+    verify_module: Guardian.JWT,  # optional
+    issuer: "PhoenixTemplate",
+    ttl: { 30, :days },
+    verify_issuer: true, # optional
+    secret_key: "Q/pRXuJQoZblGk4AIOHhMX0AkzuUpBS91hQVlO06PqrtRd/iAobc3CdBkMPDVYgc",
+    serializer: PhoenixTemplate.GuardianSerializer
