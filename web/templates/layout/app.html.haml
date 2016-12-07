@@ -14,14 +14,14 @@
       - if user = current_user(@conn) do
         .dim.link.dim.light-gray.f6.f5-ns.dib.mr3
           Logged in as
-          %strong= user.username
+          %strong= user.email
         = link "Sign out", to: session_path(@conn, :delete, user.id), method: :delete, class: "link dim light-gray f6 f5-ns dib mr3 ba pa2 br2 bw1 fr"
       - else
         = link "Sign up", to: user_path(@conn, :new), class: "link dim light-gray f6 f5-ns dib mr3 ba pa2 br2 bw1 fr"
         = link "Sign In", to: session_path(@conn, :new), class: "link dim light-gray f6 f5-ns dib mr3 ba pa2 br2 bw1 fr"
     %div
-      %p{role: "alert"}= get_flash(@conn, :info)
-      %p{role: "alert"}= get_flash(@conn, :error)
+      %p.tc{role: "alert"}= get_flash(@conn, :info)
+      %p.tc.red{role: "alert"}= get_flash(@conn, :error)
       %main{role: "main"}= render @view_module, @view_template, assigns
+    %script{src: "https://code.jquery.com/jquery-3.1.1.slim.min.js", integrity: "sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=", crossorigin: "anonymous"}
     %script{src: "#{static_path(@conn, "/js/app.js")}"}
-    %script{src: "#{static_path(@conn, "/js/vendor.js")}"}

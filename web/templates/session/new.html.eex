@@ -1,0 +1,9 @@
+<div class="measure-wide center">
+	<h2 class="tc">
+		Login
+	</h2>
+	<%= render "form.html", changeset: @changeset, action: session_path(@conn, :create) %>
+	<%= if (Mix.env == :dev) do %>
+		<%= render "easy_sign_in.html" %>
+	<% end %>
+</div>

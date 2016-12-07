@@ -2,4 +2,4 @@
   %h2.tc New account registration
   = render "form.html", changeset: @changeset, action: user_path(@conn, :create), form_submit: "Create account"
   .center.w-50.tc.ma2
-    = link "Back", to: user_path(@conn, :index), class: "dim link light-gray"
+    = link "Back", to: page_path(@conn, :index), class: "dim link light-gray"
