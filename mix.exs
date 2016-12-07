@@ -40,7 +40,9 @@ defmodule PhoenixTemplate.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:phoenix_haml, "~> 0.2.1"}]
+     {:phoenix_haml, "~> 0.2.1"},
+     {:mix_test_watch, "~> 0.2", only: :dev}
+   ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

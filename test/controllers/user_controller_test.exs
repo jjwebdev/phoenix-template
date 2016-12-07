@@ -6,10 +6,9 @@ defmodule PhoenixTemplate.UserControllerTest do
     email: "test@test.com",
     password: "test1234",
     password_confirmation: "test1234",
-    username: "testuser",
     role: 0
   }
-  @valid_attrs %{email: "test@test.com", username: "testuser"}
+  @valid_attrs %{email: "test@test.com"}
   @invalid_attrs %{}
 
   test "lists all entries on index", %{conn: conn} do
@@ -34,7 +33,8 @@ defmodule PhoenixTemplate.UserControllerTest do
   end
 
   test "shows chosen resource", %{conn: conn} do
-    user = Repo.insert! %User{}
+    changeset = User.changeset(%User{}, @valid_create_attrs)
+    user = Repo.insert! changeset
     conn = get conn, user_path(conn, :show, user)
     assert html_response(conn, 200) =~ "Show user"
   end
@@ -46,26 +46,30 @@ defmodule PhoenixTemplate.UserControllerTest do
   end
 
   test "renders form for editing chosen resource", %{conn: conn} do
-    user = Repo.insert! %User{}
+    changeset = User.changeset(%User{}, @valid_create_attrs)
+    user = Repo.insert! changeset
     conn = get conn, user_path(conn, :edit, user)
     assert html_response(conn, 200) =~ "Edit user"
   end
 
   test "updates chosen resource and redirects when data is valid", %{conn: conn} do
-    user = Repo.insert! %User{}
+    changeset = User.changeset(%User{}, @valid_create_attrs)
+    user = Repo.insert! changeset
     conn = put conn, user_path(conn, :update, user), user: @valid_create_attrs
     assert redirected_to(conn) == user_path(conn, :show, user)
     assert Repo.get_by(User, @valid_attrs)
   end
 
   test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
-    user = Repo.insert! %User{}
+    changeset = User.changeset(%User{}, @valid_create_attrs)
+    user = Repo.insert! changeset
     conn = put conn, user_path(conn, :update, user), user: @invalid_attrs
     assert html_response(conn, 200) =~ "Edit user"
   end
 
   test "deletes chosen resource", %{conn: conn} do
-    user = Repo.insert! %User{}
+    changeset = User.changeset(%User{}, @valid_create_attrs)
+    user = Repo.insert! changeset
     conn = delete conn, user_path(conn, :delete, user)
     assert redirected_to(conn) == user_path(conn, :index)
     refute Repo.get(User, user.id)
