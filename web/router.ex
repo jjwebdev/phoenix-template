@@ -21,6 +21,8 @@ defmodule PhoenixTemplate.Router do
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
+  forward("/api", Absinthe.Plug, schema: PhoenixTemplate.Schema)
+  forward("/graphiql", Absinthe.Plug.GraphiQL, schema: PhoenixTemplate.Schema)
   # Other scopes may use custom stacks.
   # scope "/api", PhoenixTemplate do
   #   pipe_through :api

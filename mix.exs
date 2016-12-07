@@ -40,7 +40,15 @@ defmodule PhoenixTemplate.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:phoenix_haml, "~> 0.2.1"}]
+     {:phoenix_haml, "~> 0.2.1"},
+     {:absinthe, "~> 1.2.0"},
+     {:absinthe_plug, "~> 1.1"},
+     {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
+     {:poison, "~> 2.1.0"},
+     {:faker, "~> 0.7"},
+     {:comeonin, "~> 2.5"},
+     {:guardian, "~> 0.13.0"}
+   ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

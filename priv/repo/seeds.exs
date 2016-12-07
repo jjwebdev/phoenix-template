@@ -9,3 +9,17 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias PhoenixTemplate.User
+alias PhoenixTemplate.Post
+alias PhoenixTemplate.Repo
+
+Repo.insert!(%User{email: "ryan@ryan.com"})
+Repo.insert!(%User{email: "rosie@mydog.com"})
+
+for _ <- 1..10 do
+  Repo.insert!(%Post{
+    title: Faker.Lorem.sentence,
+    body: Faker.Lorem.paragraph,
+    user_id: [1, 2] |> Enum.take_random(1) |> hd
+  })
+end
