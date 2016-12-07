@@ -29,7 +29,6 @@ defmodule PhoenixTemplate.SessionController do
   end
 
   defp sign_in(user, password, conn) do
-
     if checkpw(password, user.password_digest) do
       conn
       |> put_session(:current_user, %{id: user.id, email: user.email})

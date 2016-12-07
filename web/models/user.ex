@@ -6,7 +6,7 @@ defmodule PhoenixTemplate.User do
     field :username, :string
     field :email, :string
     field :password_digest, :string
-    field :role, :integer
+    field :role, RoleEnum
 
     timestamps()
 

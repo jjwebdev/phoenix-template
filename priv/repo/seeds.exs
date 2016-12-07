@@ -17,14 +17,14 @@ admin = User.changeset(%User{}, %{
     email: "admin@example.com",
     password: "password",
     password_confirmation: "password",
-    role: 0
+    role: :admin
   })
 
 member = User.changeset(%User{}, %{
     email: "member@example.com",
     password: "password",
     password_confirmation: "password",
-    role: 1
+    role: :member
   })
 
 case Repo.insert_or_update admin do

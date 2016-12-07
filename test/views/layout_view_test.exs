@@ -10,7 +10,7 @@ defmodule PhoenixTemplate.LayoutViewTest do
       password: "supersecret",
       password_confirmation: "supersecret",
       email: "jk@example.com",
-      role: 0
+      role: :admin
     })
     |> Repo.insert
     {:ok, conn: build_conn()}
