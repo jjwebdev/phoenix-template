@@ -33,7 +33,7 @@ defmodule PhoenixTemplate.UserControllerTest do
   end
 
   test "shows chosen resource", %{conn: conn} do
-    changeset = User.changeset(%User{}, @valid_create_attrs)
+    changeset = User.update_changeset(%User{}, @valid_create_attrs)
     user = Repo.insert! changeset
     conn = get conn, user_path(conn, :show, user)
     assert html_response(conn, 200) =~ "Show user"
@@ -46,14 +46,14 @@ defmodule PhoenixTemplate.UserControllerTest do
   end
 
   test "renders form for editing chosen resource", %{conn: conn} do
-    changeset = User.changeset(%User{}, @valid_create_attrs)
+    changeset = User.update_changeset(%User{}, @valid_create_attrs)
     user = Repo.insert! changeset
     conn = get conn, user_path(conn, :edit, user)
     assert html_response(conn, 200) =~ "Edit user"
   end
 
   test "updates chosen resource and redirects when data is valid", %{conn: conn} do
-    changeset = User.changeset(%User{}, @valid_create_attrs)
+    changeset = User.update_changeset(%User{}, @valid_create_attrs)
     user = Repo.insert! changeset
     conn = put conn, user_path(conn, :update, user), user: @valid_create_attrs
     assert redirected_to(conn) == user_path(conn, :show, user)
@@ -61,14 +61,14 @@ defmodule PhoenixTemplate.UserControllerTest do
   end
 
   test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
-    changeset = User.changeset(%User{}, @valid_create_attrs)
+    changeset = User.update_changeset(%User{}, @valid_create_attrs)
     user = Repo.insert! changeset
     conn = put conn, user_path(conn, :update, user), user: @invalid_attrs
     assert html_response(conn, 200) =~ "Edit user"
   end
 
   test "deletes chosen resource", %{conn: conn} do
-    changeset = User.changeset(%User{}, @valid_create_attrs)
+    changeset = User.update_changeset(%User{}, @valid_create_attrs)
     user = Repo.insert! changeset
     conn = delete conn, user_path(conn, :delete, user)
     assert redirected_to(conn) == user_path(conn, :index)
