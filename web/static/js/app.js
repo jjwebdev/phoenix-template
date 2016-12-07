@@ -18,3 +18,16 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+$(document).ready(()=> {
+  $('#admin-easy-login').on("click", () => {
+    $('#user_email').val('admin@example.com');
+    $('#user_password').val('password');
+    $('#user_submit').click();
+  });
+  $('#member-easy-login').on("click", () => {
+    $('#user_email').val('member@example.com');
+    $('#user_password').val('password');
+    $('#user_submit').click();
+  });
+});

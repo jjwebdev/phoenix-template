@@ -6,6 +6,7 @@ defmodule PhoenixTemplate.User do
     field :username, :string
     field :email, :string
     field :password_digest, :string
+    field :role, RoleEnum
 
     timestamps()
 
@@ -19,8 +20,11 @@ defmodule PhoenixTemplate.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:username, :email, :password, :password_confirmation])
-    |> validate_required([:username, :email, :password, :password_confirmation])
+    |> cast(params, [:email, :password, :password_confirmation, :role])
+    |> unique_constraint(:email)
+    |> validate_confirmation(:password, message: "does not match password!")
+    |> validate_length(:password, message: "password must be at least 7 characters", min: 7)
+    |> validate_required([:email, :password, :password_confirmation, :role])
     |> hash_password
   end
 
