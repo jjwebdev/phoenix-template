@@ -7,6 +7,8 @@ defmodule PhoenixTemplate.User do
     field :email, :string
     field :password_digest, :string
 
+    has_many :posts, PhoenixTemplate.Post
+
     timestamps()
 
     # Virtual Fields
