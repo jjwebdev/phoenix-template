@@ -4,7 +4,10 @@ exports.config = {
     javascripts: {
       joinTo: {
        "js/app.js": /^(web\/static\/js|node_modules)/,
-       "js/vendor.js": /^(web\/static\/vendor)|(deps)/
+       "js/vendor.js": /^(web\/static\/vendor)|(deps)/,
+       "js/ex_admin_common.js": ["web/static/vendor/ex_admin_common.js"],
+       "js/admin_lte2.js": ["web/static/vendor/admin_lte2.js"],
+       "js/jquery.min.js": ["web/static/vendor/jquery.min.js"],
      },
       //
       // To change the order of concatenation of files, explicitly mention here
@@ -15,7 +18,11 @@ exports.config = {
       }
     },
     stylesheets: {
-      joinTo: "css/app.css",
+      joinTo: {
+        "css/app.css": /^(web\/static\/css)/,
+        "css/admin_lte2.css": ["web/static/vendor/admin_lte2.css"],
+        "css/active_admin.css.css": ["web/static/vendor/active_admin.css.css"],
+      },
       order: {
         after: ["web/static/css/app.css"] // concat app.css last
       }

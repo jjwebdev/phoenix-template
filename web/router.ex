@@ -1,6 +1,6 @@
 defmodule PhoenixTemplate.Router do
   use PhoenixTemplate.Web, :router
-
+  use ExAdmin.Router
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -25,4 +25,9 @@ defmodule PhoenixTemplate.Router do
   # scope "/api", PhoenixTemplate do
   #   pipe_through :api
   # end
+
+  scope "/admin", ExAdmin do
+    pipe_through :browser
+    admin_routes
+  end
 end
