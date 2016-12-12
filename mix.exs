@@ -42,7 +42,8 @@ defmodule PhoenixTemplate.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:phoenix_haml, "~> 0.2.1"},
      {:mix_test_watch, "~> 0.2", only: :dev},
-     {:ecto_enum, "~> 1.0"}
+     {:ecto_enum, "~> 1.0"},
+     {:ex_admin, "~> 0.8"}
    ]
   end
 

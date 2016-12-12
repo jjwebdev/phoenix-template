@@ -28,3 +28,17 @@ import_config "#{Mix.env}.exs"
 
 config :phoenix, :template_engines,
   haml: PhoenixHaml.Engine
+
+config :ex_admin,
+  theme_selector: [
+    {"AdminLte",  ExAdmin.Theme.AdminLte2},
+    {"ActiveAdmin", ExAdmin.Theme.ActiveAdmin}
+  ],
+  repo: PhoenixTemplate.Repo,
+  module: PhoenixTemplate,
+  modules: [
+    PhoenixTemplate.ExAdmin.Dashboard,
+    PhoenixTemplate.ExAdmin.User
+  ]
+
+config :xain, :after_callback, {Phoenix.HTML, :raw}
