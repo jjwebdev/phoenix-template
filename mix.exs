@@ -18,7 +18,7 @@ defmodule PhoenixTemplate.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {PhoenixTemplate, []},
-     applications: [:mix, :phoenix_haml, :phoenix, :phoenix_pubsub, :phoenix_html,
+     applications: [:mix, :phoenix, :phoenix_pubsub, :phoenix_html,
                     :cowboy, :logger, :gettext, :phoenix_ecto, :postgrex,
                     :comeonin]
     ]
@@ -36,17 +36,16 @@ defmodule PhoenixTemplate.Mixfile do
       {:cowboy, "~> 1.0"},
       {:comeonin, "~> 2.3"},
       {:distillery, "~> 0.10"},
-      {:gettext, "~> 0.11"},
-      {:phoenix, "~> 1.2.0"},
-      {:phoenix_pubsub, "~> 1.0"},
-      {:phoenix_ecto, "~> 3.0"},
-      {:postgrex, ">= 0.12.0"},
-      {:phoenix_html, "~> 2.6"},
-      {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:phoenix_haml, "~> 0.2.1"},
-      {:mix_test_watch, "~> 0.2", only: :dev},
       {:ecto_enum, "~> 1.0"},
-      {:ex_admin, "~> 0.8"}
+      {:ex_admin, "~> 0.8"},
+      {:gettext, "~> 0.11"},
+      {:mix_test_watch, "~> 0.2", only: :dev},
+      {:phoenix, "~> 1.2.0"},
+      {:phoenix_ecto, "~> 3.0"},
+      {:phoenix_pubsub, "~> 1.0"},
+      {:phoenix_slime, "~> 0.8.0"},
+      {:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:postgrex, ">= 0.12.0"}
     ]
   end
 

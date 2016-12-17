@@ -27,7 +27,8 @@ config :logger, :console,
 import_config "#{Mix.env}.exs"
 
 config :phoenix, :template_engines,
-  haml: PhoenixHaml.Engine
+  slim: PhoenixSlime.Engine,
+  slime: PhoenixSlime.Engine
 
 config :ex_admin,
   theme_selector: [
