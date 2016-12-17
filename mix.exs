@@ -18,8 +18,10 @@ defmodule PhoenixTemplate.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {PhoenixTemplate, []},
-     applications: [:mix, :phoenix_haml, :phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin]]
+     applications: [:mix, :phoenix_haml, :phoenix, :phoenix_pubsub, :phoenix_html,
+                    :cowboy, :logger, :gettext, :phoenix_ecto, :postgrex,
+                    :comeonin]
+    ]
   end
 
   # Specifies which paths to compile per environment.
@@ -30,21 +32,22 @@ defmodule PhoenixTemplate.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:cowboy, "~> 1.0"},
-     {:comeonin, "~> 2.3"},
-     {:distillery, "~> 0.10"},
-     {:gettext, "~> 0.11"},
-     {:phoenix, "~> 1.2.0"},
-     {:phoenix_pubsub, "~> 1.0"},
-     {:phoenix_ecto, "~> 3.0"},
-     {:postgrex, ">= 0.12.0"},
-     {:phoenix_html, "~> 2.6"},
-     {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:phoenix_haml, "~> 0.2.1"},
-     {:mix_test_watch, "~> 0.2", only: :dev},
-     {:ecto_enum, "~> 1.0"},
-     {:ex_admin, "~> 0.8"}
-   ]
+    [
+      {:cowboy, "~> 1.0"},
+      {:comeonin, "~> 2.3"},
+      {:distillery, "~> 0.10"},
+      {:gettext, "~> 0.11"},
+      {:phoenix, "~> 1.2.0"},
+      {:phoenix_pubsub, "~> 1.0"},
+      {:phoenix_ecto, "~> 3.0"},
+      {:postgrex, ">= 0.12.0"},
+      {:phoenix_html, "~> 2.6"},
+      {:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:phoenix_haml, "~> 0.2.1"},
+      {:mix_test_watch, "~> 0.2", only: :dev},
+      {:ecto_enum, "~> 1.0"},
+      {:ex_admin, "~> 0.8"}
+    ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

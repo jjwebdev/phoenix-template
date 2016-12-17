@@ -7,7 +7,8 @@ The JJWebDev Phoenix Template was inspired by The Frontier Group's amazing [Rail
 ```
 $ git clone git@github.com:jjwebdev/phoenix_template.git
 $ cd phoenix_template
-$ ./bin/setup
+$ chmod +x bin/setup
+$ bin/setup
 $ mix phoenix.server
 $ open localhost:4000
 ```
