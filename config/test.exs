@@ -4,7 +4,9 @@ use Mix.Config
 # you can enable the server option below.
 config :phoenix_template, PhoenixTemplate.Endpoint,
   http: [port: 4001],
-  server: false
+  server: true
+
+config :phoenix_template, :sql_sandbox, true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
@@ -19,3 +21,5 @@ config :phoenix_template, PhoenixTemplate.Repo,
   database: "phoenix_template_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :wallaby, screenshot_on_failure: true
