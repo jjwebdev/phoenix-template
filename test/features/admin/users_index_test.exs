@@ -1,26 +1,30 @@
-defmodule PhoenixTemplate.UserListTest do
+defmodule PhoenixTemplate.UserIndexTest do
+  use ExUnit.Case, async: true
   use PhoenixTemplate.AcceptanceCase, async: true
 
-  def sign_in_as_admin(session) do
-      session
-      |> visit("/")
-      |> click_link("Sign In")
-      |> fill_in("E-mail", with: "admin@example.com")
-      |> fill_in("Password", with: "password")
-      |> find("#user_submit")
-      |> click
-  end
+  import PhoenixTemplate.Factory
+  alias PhoenixTemplate.Helpers
 
   test "admin can see user", %{session: session} do
-    first_employee =
+    build(:user)
+    |> make_admin
+    |> hash_password
+    |> insert
+
+    build(:user)
+    |> make_member
+    |> hash_password
+    |> insert
+
+    first_user_email =
       session
-      |> sign_in_as_admin
+      |> Helpers.sign_in_as_admin
       |> visit("/users")
       |> all(".user")
       |> List.first
-      |> find(".user-name")
+      |> find(".useremail")
       |> text
 
-    assert first_employee == "Chris"
+    assert first_user_email == "admin@example.com"
   end
 end

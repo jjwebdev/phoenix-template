@@ -8,9 +8,9 @@
         %th Actions
     %tbody
       - for user <- @users do
-        %tr.striped--near-white
-          %td.tc.black= user.username
-          %td.tc.black= user.email
+        %tr.user.striped--near-white
+          %td.username.tc.black= user.username
+          %td.useremail.tc.black= user.email
           %td.w5
             = link "Show", to: user_path(@conn, :show, user), class: "cf ba br1 w3 fl tc link black ma1"
             = link "Edit", to: user_path(@conn, :edit, user), class: "cf ba br1 w3 fl tc link black ma1 bg-light-yellow"

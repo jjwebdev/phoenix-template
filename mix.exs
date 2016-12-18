@@ -44,7 +44,8 @@ defmodule PhoenixTemplate.Mixfile do
      {:mix_test_watch, "~> 0.2", only: :dev},
      {:ecto_enum, "~> 1.0"},
      {:ex_admin, "~> 0.8"},
-     {:wallaby, "~> 0.14.0"}
+     {:wallaby, "~> 0.14.0"},
+     {:ex_machina, "~> 1.0", only: :test}
    ]
   end
 
